@@ -4,3 +4,4 @@ harder coding questions one might be asked on in a job search/interviews. These 
 
 Complete in Various languages as a 'keep-up' since I am not consistently using them as much.
 
+This code is rather 'unorganized tbh'
