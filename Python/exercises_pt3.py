@@ -2,7 +2,7 @@
 Part 3 to the exercises, certainly getting slightly harder every time
 """
 from __future__ import annotations
-from typing import override
+from typing import override, Optional
 
 
 def max_subarray(nums: list[int]) -> int:
@@ -74,13 +74,33 @@ def has_cycle(head: ListNode | None) -> bool:
 
     return False
 
+class LinkedList:
+    """ Model a singly linked list, composition with ListNode"""
+    def __init__(self, head: Optional[ListNode] = None) -> None:
+        self.head = head
 
+    def append_node(self, node: ListNode) -> bool:
+        """ insert a new node at the end of the list"""
+        curr = self.head
 
+        while curr:
+            if curr.next is None:
+                curr.next = node
+                return True
 
+            curr = curr.next
 
+        return False
 
+    @classmethod
+    def from_list(cls, initial_list: list[int]) -> LinkedList:
+        """ Build a LinkedList from a python list"""
+        pass
 
-
+    @staticmethod
+    def to_list(initial_list: LinkedList) -> list[int]:
+        """ Convert a LinkedList to a Python list"""
+        pass
 
 
 
