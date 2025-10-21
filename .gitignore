@@ -1,2 +1,12 @@
-.idea
-/idea
+.idea/
+
+.venv/
+.env
+.env/
+
+*.json
+*.txt
+*.png
+
+__pycache__/
+
