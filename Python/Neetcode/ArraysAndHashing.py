@@ -41,3 +41,45 @@ class ArraysAndHashing(metaclass=MemberCountingMeta):
 
         return []
 
+    @staticmethod
+    def valid_anagram(s: str, t: str) -> bool:
+        """ Return true if tthe two input strings s, t are
+        anagrams contains the same characters as another string,
+        but the order differs
+
+        assumption: s, t are lowercase english letters
+
+        since we don't care about order, they are guaranteed to have the
+        amount of characters, thus using sorting should work
+
+        do a frequency count, then compare the dicts
+        """
+        s_frq: dict = {}
+        for c in s:
+            if c in s_frq:
+                s_frq[c] += 1
+            else:
+                s_frq[c] = 1
+
+        t_frq: dict = {}
+        for c in t:
+            if c in t_frq:
+                t_frq[c] += 1
+            else:
+                t_frq[c] = 1
+
+        return t_frq == s_frq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
