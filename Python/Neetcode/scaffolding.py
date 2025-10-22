@@ -4,7 +4,7 @@ Handle and encapsulate some of the logic for mngmt
 """
 import inspect
 
-
+# TODO: Redo the thing here, make it better and simpler
 class MemberCountingMeta(type):
     def __new__(mcls, name, bases, ns):
         cls = super().__new__(mcls, name, bases, ns)
