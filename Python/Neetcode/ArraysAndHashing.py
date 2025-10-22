@@ -70,7 +70,21 @@ class ArraysAndHashing(metaclass=MemberCountingMeta):
 
         return t_frq == s_frq
 
+    @staticmethod
+    def group_anagram(strs: list[str]) -> list[list[str]]:
+        """return a list of nested list that contain a
+        collection of anagrams, output in any order,
+        same chars as another string, but order is diff
 
+        assumptions: that we only deal with lowercase english letters
+        Let's break it up.
+
+        We certainly want to loop over every
+        element in strs.
+
+
+        """
+        pass
 
 
 
