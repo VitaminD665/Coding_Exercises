@@ -18,8 +18,10 @@ class LinkedList(NeetCodeSection):
     Encapsulate the linked list questions
 
     """
+    count_neetcode: int =
+
     @staticmethod
-    def reverse_list(head: ListNode) -> Optional[ListNode] :
+    def reverse_list(head: ListNode) -> Optional[ListNode]:
         """return the new beginning node of a linked list
         we need to 'walk' the list and simply switch the orientation
         of the pointers at any given node
@@ -40,5 +42,41 @@ class LinkedList(NeetCodeSection):
 
         return previous
 
+    @staticmethod
+    def merge_two_sorted():
+        pass
 
-print(LinkedList())
+    @staticmethod
+    def has_cycle(head: ListNode) -> bool:
+        """ return true if there is a cycle in the list
+        this means that a node can be visited again
+
+        we certainly want to use the slow and fast pointer approach
+        """
+        if not head:
+            return False
+
+        slow, fast = head, head
+
+        while fast.next and fast.next.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow is fast:
+                return True
+
+        return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
