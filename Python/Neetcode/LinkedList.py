@@ -18,7 +18,7 @@ class LinkedList(NeetCodeSection):
     Encapsulate the linked list questions
 
     """
-    count_neetcode: int =
+    count_neetcode: int = 11
 
     @staticmethod
     def reverse_list(head: ListNode) -> Optional[ListNode]:
