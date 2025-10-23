@@ -3,8 +3,8 @@ Module for the linked list questions on neetcode
 
 John Samis - Oct 2025
 """
-from Python.Neetcode.scaffolding import NeetCodeSection
-from typing import override, Optional
+from Python.Neetcode.scaffolding import NeetCodeSection, easy_q, medium_q, hard_q
+from typing import Optional
 
 
 class ListNode:
@@ -20,7 +20,9 @@ class LinkedList(NeetCodeSection):
     """
     count_neetcode: int = 11
 
+
     @staticmethod
+    @easy_q
     def reverse_list(head: ListNode) -> Optional[ListNode]:
         """return the new beginning node of a linked list
         we need to 'walk' the list and simply switch the orientation
@@ -43,10 +45,12 @@ class LinkedList(NeetCodeSection):
         return previous
 
     @staticmethod
+    @easy_q
     def merge_two_sorted():
         pass
 
     @staticmethod
+    @easy_q
     def has_cycle(head: ListNode) -> bool:
         """ return true if there is a cycle in the list
         this means that a node can be visited again

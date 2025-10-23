@@ -3,7 +3,7 @@
 
  John Samis - Oct 2025
  """
-from Python.Neetcode.scaffolding import NeetCodeSection
+from Python.Neetcode.scaffolding import NeetCodeSection, easy_q, medium_q, hard_q
 from typing import override
 
 class TwoPointers(NeetCodeSection):
@@ -14,6 +14,7 @@ class TwoPointers(NeetCodeSection):
     count_neetcode: int = 5
 
     @staticmethod
+    @easy_q
     def valid_palindrome(s: str) -> bool:
         """return true if s is a palindrome, in which
         it reads forwards: racecar

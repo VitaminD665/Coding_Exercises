@@ -4,8 +4,8 @@ Array and Hashing problems
 
 John Samis - October 2025
 """
-from Python.Neetcode.scaffolding import NeetCodeSection
-from typing import override
+from Python.Neetcode.scaffolding import NeetCodeSection, easy_q, medium_q, hard_q
+
 
 class ArraysAndHashing(NeetCodeSection):
     """
@@ -14,6 +14,7 @@ class ArraysAndHashing(NeetCodeSection):
     count_neetcode: int = 9
 
     @staticmethod
+    @easy_q
     def contains_duplicate(nums: list[int]) -> bool:
         """
         Return true if any value in the input array nums appears more than once
@@ -21,6 +22,7 @@ class ArraysAndHashing(NeetCodeSection):
         return len(set(nums)) != len(nums)
 
     @staticmethod
+    @easy_q
     def two_sum(nums: list[int], target: int) -> list[int]:
         """ Array of ints nums, int target,
         return the indices i and j so that they do the thing"""
@@ -35,6 +37,7 @@ class ArraysAndHashing(NeetCodeSection):
         return []
 
     @staticmethod
+    @easy_q
     def valid_anagram(s: str, t: str) -> bool:
         """ Return true if tthe two input strings s, t are
         anagrams contains the same characters as another string,
@@ -64,7 +67,8 @@ class ArraysAndHashing(NeetCodeSection):
         return t_frq == s_frq
 
     @staticmethod
-    def group_anagram(strs: list[str]) -> list[list[str]]:
+    @medium_q
+    def group_anagrams(strs: list[str]) -> list[list[str]]:
         """return a list of nested list that contain a
         collection of anagrams, output in any order,
         same chars as another string, but order is diff
