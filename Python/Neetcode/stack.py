@@ -29,7 +29,7 @@ class Stack(NeetCodeSection):
         class MinStack:
             """
             Stack class that supports push, pop, top, getMin ops.
-            Valid for ints only
+            Valid for ints only, each class member method should be O(1)
             """
             def __init__(self) -> None:
                 """ dunda"""
@@ -44,7 +44,9 @@ class Stack(NeetCodeSection):
                 pass
 
             def top(self) -> int:
+                """ get and return the top element in the list"""
                 pass
 
             def get_min(self) -> int:
+                """ get the minimum element in the stack"""
                 pass
