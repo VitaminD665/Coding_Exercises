@@ -3,7 +3,7 @@ Module for the linked list questions on neetcode
 
 John Samis - Oct 2025
 """
-from Python.Neetcode.scaffolding import NeetCodeSection, easy_q, medium_q, hard_q
+from Python.Neetcode.base import NeetCodeSection, easy_q, medium_q, hard_q
 from typing import Optional
 
 

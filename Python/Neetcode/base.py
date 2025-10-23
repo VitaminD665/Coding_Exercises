@@ -11,6 +11,12 @@ class _QDiff(Enum):
     HARD = auto()
 
 
+class _QAttrs(Enum):
+
+
+
+
+
 class NeetCodeSection:
     def __repr__(self) -> str:
         return (
@@ -22,32 +28,40 @@ class NeetCodeSection:
 
 def easy_q(func):
     """Defines the question as easy, print for now."""
-    def wrapper(*args, **kwargs):
+    def medium(*args, **kwargs):
         difficulty: _QDiff = _QDiff.EASY
         print(f"This is an {difficulty} exercise.")
         result = func(*args, **kwargs)
         return result
 
-    return wrapper
+    return medium
 
 
 def medium_q(func):
     """Defines the question as medium, print for now."""
-    def wrapper(*args, **kwargs):
+    def medium(*args, **kwargs):
         difficulty: _QDiff = _QDiff.MEDIUM
         print(f"This is an {difficulty} exercise.")
         result = func(*args, **kwargs)
         return result
 
-    return wrapper
+    return medium
 
 
 def hard_q(func):
     """Defines the question as hard, print for now."""
-    def wrapper(*args, **kwargs):
+    def hard(*args, **kwargs):
         difficulty: _QDiff = _QDiff.HARD
         print(f"This is an {difficulty} exercise.")
+        result =func(*args, **kwargs)
+        return result
+    return hard
+
+def has_inner_class(func):
+    """Specifies that a question contains a class definition inside of it"""
+    def inner(*args, **kwargs):
+        print("This method has a class defined inside of it.")
         result = func(*args, **kwargs)
         return result
+    return inner
 
-    return wrapper

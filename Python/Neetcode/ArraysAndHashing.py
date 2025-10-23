@@ -4,7 +4,7 @@ Array and Hashing problems
 
 John Samis - October 2025
 """
-from Python.Neetcode.scaffolding import NeetCodeSection, easy_q, medium_q, hard_q
+from Python.Neetcode.base import NeetCodeSection, easy_q, medium_q, hard_q
 
 
 class ArraysAndHashing(NeetCodeSection):
