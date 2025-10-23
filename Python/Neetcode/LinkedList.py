@@ -1,9 +1,9 @@
 """
 Module for the linked list questions on neetcode
 
-
+John Samis - Oct 2025
 """
-from scaffolding import MemberCountingMeta
+from Python.Neetcode.scaffolding import NeetCodeSection
 from typing import override, Optional
 
 
@@ -13,15 +13,11 @@ class ListNode:
         self.next = next
 
 
-class LinkedList(metaclass=MemberCountingMeta):
+class LinkedList(NeetCodeSection):
     """
     Encapsulate the linked list questions
 
     """
-    @override
-    def __repr__(self):
-        pass
-
     @staticmethod
     def reverse_list(head: ListNode) -> Optional[ListNode] :
         """return the new beginning node of a linked list
@@ -45,3 +41,4 @@ class LinkedList(metaclass=MemberCountingMeta):
         return previous
 
 
+print(LinkedList())

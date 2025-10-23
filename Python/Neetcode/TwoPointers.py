@@ -1,22 +1,17 @@
 """ Module to encapsulate the problems
- on two"""
+ on two pointers
 
-from scaffolding import MemberCountingMeta
+ John Samis - Oct 2025
+ """
+from Python.Neetcode.scaffolding import NeetCodeSection
 from typing import override
 
-class TwoPointers(metaclass=MemberCountingMeta):
+class TwoPointers(NeetCodeSection):
     """
     Encapsulate the methods and exercises complete in this class
 
     """
     count_neetcode: int = 5
-
-    @override
-    def __repr__(self) -> str:
-        return (f"{self.__class__.__name__}("
-                f"num_questions_solved={self.num_questions}, "
-                f"out_of={self.count_neetcode}, "
-                f"list={self.list_questions})")
 
     @staticmethod
     def valid_palindrome(s: str) -> bool:

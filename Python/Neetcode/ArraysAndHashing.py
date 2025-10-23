@@ -4,21 +4,14 @@ Array and Hashing problems
 
 John Samis - October 2025
 """
-from scaffolding import MemberCountingMeta
+from Python.Neetcode.scaffolding import NeetCodeSection
 from typing import override
 
-class ArraysAndHashing(metaclass=MemberCountingMeta):
+class ArraysAndHashing(NeetCodeSection):
     """
     Contains the Arrays and Hashing Exercises as part of the NeetCode DSA Roadmap
     """
     count_neetcode: int = 9
-
-    @override
-    def __repr__(self) -> str:
-        return (f"{self.__class__.__name__}("
-                f"num_questions_solved={self.num_questions}, "
-                f"out_of={self.count_neetcode}, "
-                f"list={self.list_questions})")
 
     @staticmethod
     def contains_duplicate(nums: list[int]) -> bool:
