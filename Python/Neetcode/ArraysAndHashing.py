@@ -29,7 +29,7 @@ class ArraysAndHashing(metaclass=MemberCountingMeta):
 
     @staticmethod
     def two_sum(nums: list[int], target: int) -> list[int]:
-        """ Given an array of integers nums, and an integer target,
+        """ Array of ints nums, int target,
         return the indices i and j so that they do the thing"""
         store: dict[int, int] = {}
 

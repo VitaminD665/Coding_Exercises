@@ -31,10 +31,9 @@ class TwoPointers(metaclass=MemberCountingMeta):
 
         while left < right:
 
-            # We also want to skip over spaces
+            # We also want to skip over spaces and whatnot
             while left < right and not s[right].isalnum():
                 right -= 1
-
 
             while left < right and not s[left].isalnum():
                 left += 1
