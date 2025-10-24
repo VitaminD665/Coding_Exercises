@@ -11,8 +11,6 @@ class BinarySearch(NeetCodeSection):
     """
     Section for problems related to performing binary searches
 
-
-
     """
     @staticmethod
     @easy_q
@@ -24,10 +22,26 @@ class BinarySearch(NeetCodeSection):
             otherwise, return -1
 
             this is the classic binary_search algorithm
+
+            notes afterwards, it is very important to really get
+            the basic tech, acquiring middle, the comparison to the value vs. indexes
+            and reading a question carefully and returning the index
         """
-        pass
+        left, right = 0, len(nums) - 1
 
+        while left <= right:
 
+            # we want the middle
+            middle = (left + right) // 2
+
+            if target > nums[middle]:
+                left = middle + 1
+            elif target < nums[middle]:
+                right = middle - 1
+            elif target == nums[middle]:
+                return middle
+
+        return -1
 
 
 
