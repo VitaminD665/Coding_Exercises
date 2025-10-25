@@ -31,7 +31,7 @@ class BinarySearch(NeetCodeSection):
 
         while left <= right:
 
-            # we want the middle
+            # we want the middle at every iteration
             middle = (left + right) // 2
 
             if target > nums[middle]:
