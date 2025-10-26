@@ -86,20 +86,51 @@ class ArraysAndHashing(NeetCodeSection):
 
 
     @staticmethod
-    @medium_q_q
-    def longest_consecutive_sequence(nums: list[int]) -> Optional[int]:
+    @medium_q
+    def longest_consecutive_sequence(nums: Optional[list[int]]) -> int:
         """ return the longest consecutive sequence of elements that can be
         formed 
         
         each element is exactly 1 greater than the previous element;
-        elements do not have to be conecutive in the original array
+        elements do not have to be consecutive in the original array
         
         if num - 1 DNE in the given array, this can be marked as the 'start' 
-        of the series"""
-        if nums is None:
-            return None
+        of the series
 
-        pass
+        Break into steps again, this will likely be useful for future OAs and interviews as well
+        1. Convert to hash set first so we get quick lookups
+        2. We look for the start of the sequences, this is that if n - 1 DNE in our set
+        3. If it is the start, we start looking for n + 1, n + 2, and so on by checking if each is in the
+           set and by incrementing a counter
+        4. We can place the length of each sequence in a list and then call max
+        """
+        if nums is None:
+            return 0
+
+        s = set(nums)
+        max_length: int = 0
+
+        for num in s:
+            if num - 1 not in s:
+                # This is our sequence starter
+                count = 1
+                while True:
+                    if num + count not in s:
+                        break
+
+                    count += 1
+
+                if count > max_length:
+                    max_length = count
+
+        return max_length
+
+
+
+
+
+
+
 
 
 
