@@ -1,6 +1,7 @@
 """
 Handle and encapsulate some of the logic for mngmt
 
+John Samis October 2025
 """
 from enum import Enum, auto
 
@@ -9,12 +10,6 @@ class _QDiff(Enum):
     EASY = auto()
     MEDIUM = auto()
     HARD = auto()
-
-
-class _QAttrs(Enum):
-
-
-
 
 
 class NeetCodeSection:

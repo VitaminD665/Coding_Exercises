@@ -5,7 +5,8 @@ Array and Hashing problems
 John Samis - October 2025
 """
 from Python.Neetcode.base import NeetCodeSection, easy_q, medium_q, hard_q
-from typing import Optional
+from typing import Optional, List
+from collections import defaultdict
 
 
 class ArraysAndHashing(NeetCodeSection):
@@ -69,21 +70,27 @@ class ArraysAndHashing(NeetCodeSection):
 
     @staticmethod
     @medium_q
-    def group_anagrams(strs: list[str]) -> list[list[str]]:
+    def group_anagrams(strs: List[str]) -> List[List[str]]:
         """return a list of nested list that contain a
         collection of anagrams, output in any order,
         same chars as another string, but order is diff
 
         assumptions: that we only deal with lowercase english letters
-        Let's break it up.
 
-        We certainly want to loop over every
-        element in strs.
-
+        use a dict with an array of ordered letters of the alphabet as the keys
+        tuple due to python mutability impossibility as dict keys
+        and the values as a list of the grouped anagrams
 
         """
-        pass
+        anagram_groups = defaultdict(list)
+        for s in strs:
+            count = [0] * 26  # a ... z
+            for c in s:
+                count[ord(c) - ord("a")] += 1
 
+            anagram_groups[tuple(count)].append(s)
+
+        return list(anagram_groups.values())
 
     @staticmethod
     @medium_q
@@ -120,8 +127,7 @@ class ArraysAndHashing(NeetCodeSection):
 
                     count += 1
 
-                if count > max_length:
-                    max_length = count
+                max_length = max(max_length, count)
 
         return max_length
 
