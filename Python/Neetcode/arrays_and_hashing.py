@@ -5,6 +5,7 @@ Array and Hashing problems
 John Samis - October 2025
 """
 from Python.Neetcode.base import NeetCodeSection, easy_q, medium_q, hard_q
+from typing import Optional
 
 
 class ArraysAndHashing(NeetCodeSection):
@@ -82,6 +83,28 @@ class ArraysAndHashing(NeetCodeSection):
 
         """
         pass
+
+
+    @staticmethod
+    @medium_q_q
+    def longest_consecutive_sequence(nums: list[int]) -> Optional[int]:
+        """ return the longest consecutive sequence of elements that can be
+        formed 
+        
+        each element is exactly 1 greater than the previous element;
+        elements do not have to be conecutive in the original array
+        
+        if num - 1 DNE in the given array, this can be marked as the 'start' 
+        of the series"""
+        if nums is None:
+            return None
+
+        pass
+
+
+
+
+
 
 
 
