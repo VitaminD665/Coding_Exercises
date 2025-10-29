@@ -43,11 +43,34 @@ class BeginnersGuide:
         return max_wealth
 
 
+    @staticmethod
+    def fizz_buzz(n: int) -> List[str]:
+        """ return a string array where
+        if i is divisible by 3 and 5, add "FIzzBuzz"
+        if i is divisible by 3, add "Fizz"
+        if i is divisible ny 5, add "Buzz"
+        otherwise simply add the number (as a string)
 
+        the key here is the modulo operator which gives you the 'reste'
+        """
+        output: list[str] = []
+        divisors: dict[int, str] = {
+            3: "Fizz",
+            5: "Buzz",
+        }
 
+        for i in range(1, n + 1):
+            s: str = ""
+            for divisor, label in divisors.items():
+                if i % divisor == 0:
+                    s += label
 
+            if s:
+                output.append(s)
+            else:
+                output.append(str(i))
 
-
+        return output
 
 
 
