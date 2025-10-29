@@ -132,7 +132,53 @@ class ArraysAndHashing(NeetCodeSection):
         return max_length
 
 
+    @staticmethod
+    @medium_q
+    def top_k_freq_elements(nums: list[int], k: int) -> list[int]:
+        """ return the k most frequent members of the array
+        so if k = 2, if 2 is there twice and 3 is there 3 times
+        we return [2, 3] because both of them fit the k description
 
+        * order of return does not matter at all.
+        so k = 1 for [7, 7] return [7]
+
+        we really want to group numbers based on their frequencies
+        from one to n. Then simply pick the top k numbers from the buckets
+        from n to 1.
+
+        bucket sort, not super familiar so lets see if I can
+        get through what I need to and first principles this bitch
+
+        we want to map the indices/count/freq to values
+        where the values are lists of the items that have that
+
+        we will limit our go back from n to 1 via knowing the length of the
+        input array. So essentially if n = 6 we can just go back down from 6
+
+        so step wise:
+        1. we want to get the freq of each, this can can be done with a hashmap (dict)
+        2. Populate our bucket sort
+        3. iterate downwards till k times?
+
+        """
+        freq: list[list[int]] = [[] for _ in range(len(nums) + 1)]
+        count: dict[int, int] = {}
+
+        for num in nums:
+            count[num] = 1 + count.get(num, 0)
+
+        for n, c in count.items():
+            freq[c].append(n)
+
+        result: list[int] = list()
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                result.append(n)
+
+                if len(result) == k:
+                    return result
+
+        return result
 
 
 
