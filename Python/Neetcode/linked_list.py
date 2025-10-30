@@ -8,8 +8,8 @@ from typing import Optional
 
 
 class ListNode:
-    def __init__(self, value=0, next=None) -> None:
-        self.value = value
+    def __init__(self, val=0, next=None) -> None:
+        self.val = val
         self.next = next
 
 
@@ -46,11 +46,6 @@ class LinkedList(NeetCodeSection):
 
     @staticmethod
     @easy_q
-    def merge_two_sorted():
-        pass
-
-    @staticmethod
-    @easy_q
     def has_cycle(head: ListNode) -> bool:
         """ return true if there is a cycle in the list
         this means that a node can be visited again
@@ -71,9 +66,25 @@ class LinkedList(NeetCodeSection):
 
         return False
 
+    @staticmethod
+    @easy_q
+    def merge_two_lists(list_1: ListNode, list_2: ListNode) -> ListNode:
+        """ return the new head of the merge lists from
+        given their head nodes; must be sorted
+        """
+        new_head = result = ListNode()
+        while list_1 and list_2:
+            if list_1.val < list_2.val:
+                result.next = list_1
+                list_1 = list_1.next
+            else:
+                result.next = list_2
+                list_2 = list_2.next
 
+            result = result.next
 
-
+        result.next = list_1 or list_2
+        return new_head.next
 
 
 
