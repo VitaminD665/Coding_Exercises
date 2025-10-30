@@ -72,6 +72,28 @@ class TwoPointers(NeetCodeSection):
 
         return most_water
 
+    @staticmethod
+    @medium_q
+    def two_integer_sum_ii(nums: list[int], target: int) -> list[int]:
+        """ sorted ascending order list,
+        return the indices of two-nums, such that those numbers add up to
+        the target number. I1 nad I2 are never equal whatsoever
+        always one solution, and it must be with O(1) space or 'in-place'
+        """
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            curr_sum = nums[left] + nums[right]
+            if curr_sum == target:
+                return [left + 1, right + 1]
+            elif curr_sum > target:
+                right -= 1
+            elif curr_sum < target:
+                left += 1
+
+        return []
+
+
 
 
 
