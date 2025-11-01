@@ -180,6 +180,41 @@ class ArraysAndHashing(NeetCodeSection):
 
         return result
 
+    @staticmethod
+    @medium_q
+    def prod_array_except_self(nums: list[int]) -> list[int]:
+        """ return an output array where each element is the product of 
+        all of the leements in nums except for nums at that index
+        
+        don't need to worry about integer size or anything there.
+
+        Solve it in O(n) without using division?
+        
+        Immediately thinking of hashsets, dicts here.
+
+        We use prefix/suffix here
+
+        """
+        if not nums:
+            return []
+
+        output: list[int] = [None] * len(nums)
+
+        # So first do left to right
+        curr_prod: int = 1
+        for i in range(len(nums)):
+            output[i] = curr_prod
+            curr_prod *= nums[i]
+
+        # Then left to right
+        curr_prod = 1
+        for i in range(len(nums) -1, -1, -1):
+            output[i] *= curr_prod
+            curr_prod *= nums[i]
+
+        return output
+
+
 
 
 
