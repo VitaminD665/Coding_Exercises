@@ -18,8 +18,38 @@ class Stack(NeetCodeSection):
 
     @staticmethod
     @easy_q
-    def valid_parentheses():
-        pass
+    def valid_parentheses(s: str) -> bool:
+        """ The classic problem which involves using a hashtable for the most
+        optimal solution indeed. We will use a stack to store characters 
+        iterate through index and. opening bracket, we push onto the stack, 
+        if closing type, we check the top of the stack which is indeed O(1) peek or peep
+        
+        If it is not corresponding, its gone immediately and we return false
+        """
+        if len(s) % 2 != 0:
+            return False
+
+        stack: list[str] = []
+        pairs: dict[str, str] = {
+            ')': '(',
+            '}': '{',
+            ']': '[',
+        }
+        openings: set[str] = set(pairs.values())
+
+        for c in s:
+            if c in openings:
+                stack.append(c)
+            elif c in pairs:
+                if not stack:
+                    return False
+                
+                if stack.pop() != pairs[c]:
+                    return False
+            else:
+                return False
+
+        return not stack
 
     @staticmethod
     @medium_q
